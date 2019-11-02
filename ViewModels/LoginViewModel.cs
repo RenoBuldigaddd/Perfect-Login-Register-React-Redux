@@ -13,4 +13,14 @@ namespace React_Login_Register_Redux.ViewModels
         [Required(ErrorMessage = "Field sould not be empty!")]
         public string Password { get; set; }
     }
+    public class RegisterViewModel
+    {
+        [EmailAddress(ErrorMessage = "There should be your email!")]
+        [Required(ErrorMessage = "Field sould not be empty!")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Field sould not be empty!")]
+        public string Password { get; set; }
+        [Required(ErrorMessage = "Field sould not be empty!")]
+        public string PasswordConfirm { get; set; }
+    }
 }

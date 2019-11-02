@@ -10,6 +10,8 @@ const initialState =
         failed: false,
         errors : {}
 }
+
+
 export const registerReducer = (state = initialState, action) => {
     let newState = state;
     switch(action.type)
@@ -23,7 +25,7 @@ export const registerReducer = (state = initialState, action) => {
             break;
         }
         case REGISTER_FAILED: {
-            console.log('----Failedo f User Registration----')
+            console.log('----Fail of User Registration----')
             break;
         }
         default :{
