@@ -4,6 +4,8 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import * as Counter from './Counter';
 import * as WeatherForecasts from './WeatherForecasts';
 import { createBrowserHistory } from 'history';
+import {RegisterReducer, registerReducer} from '../components/auth/Register/reducer';
+import register from '../registerServiceWorker';
 
 // Create browser history to use in the Redux store
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
@@ -12,7 +14,8 @@ export const history = createBrowserHistory({ basename: baseUrl });
 export default function configureStore(history, initialState) {
   const reducers = {
     counter: Counter.reducer,
-    weatherForecasts: WeatherForecasts.reducer
+    weatherForecasts: WeatherForecasts.reducer,
+    register: registerReducer
   };
 
   const middleware = [
